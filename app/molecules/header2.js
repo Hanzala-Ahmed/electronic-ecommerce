@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Header({ login = true }) {
+export default function Header2({ login = true }) {
   return (
     <div className="w-full flex py-3 px-6 h-[70px] items-center md:justify-start justify-between">
       <Image
-        src="/images/logo.png"
+        src="/images/logo2.png"
         alt="logo"
         width={80}
         height={50}
         layout="fixed"
       />
-      <div className="hidden md:flex flex-1 gap-4 font-semibold text-white justify-center items-center">
+      <div className="hidden md:flex flex-1 gap-4 font-semibold text-black justify-center items-center">
         <Link href={"#"} className="">
           Products
         </Link>
