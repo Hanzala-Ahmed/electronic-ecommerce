@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header({ login = true }) {
   return (
-    <div className="w-full flex py-3 px-6 h-[70px] items-center md:justify-start justify-between">
+    <div className="w-full flex py-3 px-6 md:px-12 h-[70px] items-center md:justify-start justify-between">
       <Image
         src="/images/logo.png"
         alt="logo"
