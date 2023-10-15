@@ -1,5 +1,5 @@
 "use client";
-import LabelInput from "@/app/icons/labelInput";
+import LabelInput from "@/app/atoms/labelInput";
 import Tick from "@/app/icons/tick";
 import Footer from "@/app/molecules/Footer";
 import ProductsCard from "@/app/molecules/ProductsCard";

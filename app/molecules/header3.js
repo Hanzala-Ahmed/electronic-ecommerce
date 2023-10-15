@@ -5,7 +5,7 @@ import { useState } from "react";
 import Modal from "react-responsive-modal";
 import LabelInput from "../atoms/labelInput";
 
-export default function Header({ login = true }) {
+export default function Header3({ login = true }) {
   const [open, setOpen] = useState(false);
   const [signupOpen, setSignupOpen] = useState(false);
   const onCloseModal = () => {
@@ -27,22 +27,20 @@ export default function Header({ login = true }) {
           height={50}
           layout="fixed"
         />
-        <div className="hidden md:flex flex-1 gap-4 font-semibold text-white justify-center items-center">
-          <Link href={"#"} className="">
-            Products
-          </Link>
-          <Link href={"#"} className="">
-            Combos
-          </Link>
-          <Link href={"#"} className="">
-            Deals
-          </Link>
-          <Link href={"#"} className="">
-            Explore
-          </Link>
-          <Link href={"#"} className="">
-            Support
-          </Link>
+        <div className="hidden md:flex flex-1 gap-4 font-semibold text-[#5F5D5D] justify-between items-center mx-3">
+          <div className="flex gap-4 h-full items-center">
+            <Link href={"#"} className="">
+              Help Center
+            </Link>
+          </div>
+          <div className="flex gap-4 items-center h-full">
+            <Link href={"#"} className="">
+              Submit a request
+            </Link>
+            <Link href={"#"} className="">
+              Back to our website
+            </Link>
+          </div>
         </div>
 
         {login && (

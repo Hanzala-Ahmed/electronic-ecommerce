@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <>
       <div className="!w-full h-[400px] bg-home_sec1 bg-[length:100vw_100%] bg-center bg-no-repeat md:min-h-[540px] flex flex-col justify-between">
-        {/* <div></div> */}
         <Header login={false} />
         <div className="px-6 w-full text-white flex flex-col h-[75%]">
           <p className="uppercase text-[40px] font-bold">HOME APPLIANCES</p>

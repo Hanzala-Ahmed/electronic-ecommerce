@@ -5,7 +5,11 @@ export default function LabelInput({
 }) {
   return (
     <div className="w-full h-fit flex flex-col gap-2">
-      {label && <label className="font-semibold uppercase">{label}</label>}
+      {label && (
+        <label className="font-semibold uppercase text-[#555454]">
+          {label}
+        </label>
+      )}
       <input
         type={type}
         placeholder={placeholder ? placeholder : ""}
