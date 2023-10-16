@@ -1,6 +1,7 @@
 "use client";
 import LabelInput from "@/app/atoms/labelInput";
 import Tick from "@/app/icons/tick";
+import CartSidebar from "@/app/molecules/CartSidebar";
 import Footer from "@/app/molecules/Footer";
 import ProductsCard from "@/app/molecules/ProductsCard";
 import Header2 from "@/app/molecules/header2";
@@ -87,6 +88,7 @@ export default function ProductDetails() {
   const [color, setColor] = useState("white");
   const [bundle, setBundle] = useState("1-Pack");
   const [quantity, setQuantity] = useState(1);
+  const [cartOpen, setCartOpen] = useState(false);
 
   console.log("activeTab", activeTab);
 
@@ -95,7 +97,7 @@ export default function ProductDetails() {
   };
 
   return (
-    <>
+    <div className="">
       <Header2 />
 
       <div className="w-full flex md:flex-row flex-col justify-between px-6 md:px-12 my-14 gap-5">
@@ -220,21 +222,26 @@ export default function ProductDetails() {
 
                 <div className="flex border-[1px] border-[#5F5D5D] px-2 gap-3 w-fit items-center justify-center">
                   <p
+                    className="h-full p-2 cursor-pointer text-[20px]"
+                    onClick={() =>
+                      setQuantity(quantity > 1 ? quantity - 1 : quantity)
+                    }
+                  >
+                    -
+                  </p>
+                  <p className="text-[20px]">{quantity}</p>
+                  <p
                     className="h-full p-2 text-[20px] cursor-pointer"
                     onClick={() => setQuantity(quantity + 1)}
                   >
                     +
                   </p>
-                  <p className="text-[20px]">{quantity}</p>
-                  <p
-                    className="h-full p-2 cursor-pointer text-[20px]"
-                    onClick={() => setQuantity(quantity - 1)}
-                  >
-                    -
-                  </p>
                 </div>
                 <div className="flex flex-col gap-2 items-center w-fit justify-between">
-                  <div className="w-fit h-[40px] text-xs md:text-base border-[#88B8C8] border-[2px] px-6 py-2 cursor-pointer mt-2 uppercase flex justify-center items-center rounded-[31px]">
+                  <div
+                    className="w-fit h-[40px] text-xs md:text-base border-[#88B8C8] border-[2px] px-6 py-2 cursor-pointer mt-2 uppercase flex justify-center items-center rounded-[31px]"
+                    onClick={() => setCartOpen(true)}
+                  >
                     Add to Cart
                   </div>
                   <div className="w-full h-[40px] text-xs md:text-base bg-[#88B8C8] px-6 py-2 cursor-pointer mt-2 uppercase flex justify-center items-center rounded-[31px]">
@@ -586,7 +593,15 @@ export default function ProductDetails() {
         </div>
       </div>
 
+      {cartOpen && (
+        <CartSidebar
+          setCartOpen={setCartOpen}
+          quantity={quantity}
+          setQuantity={setQuantity}
+        />
+      )}
+
       <Footer />
-    </>
+    </div>
   );
 }
